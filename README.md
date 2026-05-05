@@ -32,13 +32,24 @@ A terminal UI for quickly SSHing into hosts from your `~/.ssh/config` and your T
 ```bash
 git clone https://github.com/romain/sshselector
 cd sshselector
-go build -o sshselector .
 ```
 
-Optionally install system-wide:
+To build **and** install system-wide in one step, run the provided install script:
 
 ```bash
-sudo mv sshselector /usr/local/bin/
+./install.sh
+```
+
+The script will:
+1. Verify you are in the correct repository root
+2. Build a stripped binary with version info embedded (`git describe`)
+3. Move it to `/usr/local/bin/sshselector`, prompting for `sudo` if needed
+4. Confirm the binary is on your `$PATH`
+
+To build without installing:
+
+```bash
+go build -o sshselector .
 ```
 
 ---
