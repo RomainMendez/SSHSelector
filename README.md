@@ -40,11 +40,19 @@ To build **and** install system-wide in one step, run the provided install scrip
 ./install.sh
 ```
 
+You can optionally install it under a shorter name using `--name`:
+
+```bash
+./install.sh --name fssh   # installed as 'fssh'
+```
+
 The script will:
 1. Verify you are in the correct repository root
 2. Build a stripped binary with version info embedded (`git describe`)
-3. Move it to `/usr/local/bin/sshselector`, prompting for `sudo` if needed
+3. Move it to `/usr/local/bin/<name>`, prompting for `sudo` if needed
 4. Confirm the binary is on your `$PATH`
+
+Run `./install.sh --help` for all options.
 
 To build without installing:
 
